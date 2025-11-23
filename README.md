@@ -30,11 +30,15 @@ caption-generator/
 │ ├── model_inference.py
 │ ├── prompt_templates.py
 │ ├── utils.py
+
 │── app/
 │ ├── main.py
 │ ├── ui.py
+
 │── data/
+
 │── requirements.txt
+
 │── README.md
 
 
