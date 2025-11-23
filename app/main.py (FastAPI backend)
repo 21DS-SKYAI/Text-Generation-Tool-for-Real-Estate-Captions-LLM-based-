@@ -1,0 +1,21 @@
+ from fastapi import FastAPI
+from pydantic import BaseModel
+from src.model_inference import CaptionGenerator
+from src.prompts import build_caption_prompt
+
+app = FastAPI(title="Real Estate Caption Generator")
+generator = CaptionGenerator()
+
+class PropertyRequest(BaseModel):
+    bhk: str
+    area: int
+    location: str
+    highlights: str
+    view: str | None = None
+    tone: str = "luxury"
+
+@app.post("/generate")
+def generate_caption(req: PropertyRequest):
+    prompt = build_caption_prompt(req.dict(), tone=req.tone)
+    caption = generator.generate(prompt)
+    return {"caption": caption}
