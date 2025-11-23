@@ -1,0 +1,13 @@
+Local:
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+------------------------------------
+On AWS EC2 / Render (basic idea):
+
+Create EC2 instance (with GPU if model is big, or use HF Inference API instead).
+
+Install Python + requirements.
+
+Use uvicorn + nginx or just a managed platform (Render/ Railway).
+
+Optionally add Streamlit for internal UI (streamlit run app/ui_streamlit.py).
