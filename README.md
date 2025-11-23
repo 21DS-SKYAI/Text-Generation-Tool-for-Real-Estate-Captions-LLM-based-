@@ -58,8 +58,11 @@ caption-generator/
 Generate a luxury-style social media caption for:
 
 BHK: 3 BHK
+
 Location: Worli
+
 Area: 1800 sq ft
+
 Highlights: Sea-facing, high floor, modern interiors
 
 
